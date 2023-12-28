@@ -67,17 +67,17 @@ export default function Home({ data, symbols }) {
     handleChange(amount);
   };
   return (
-    <>
+    <div className="max-h-screen ">
       <Navbar />
       <div className="p-10 ">
         <div className="flex mb-5 font-bold text-5xl justify-center text-center">
           <h1 className="text-indigo-500">Currency </h1>
-          <h1 className=" text-slate-700">Converter</h1>
+          <h1 className=" text-slate-700 dark:text-white">Converter</h1>
         </div>
 
         <div className="flex  font-bold w-4/6 items-end text-2xl m-auto mb-3 gap-5">
           <div className="flex flex-col w-full">
-            <h1>From</h1>
+            <h1 className="text-white">From</h1>
             <CurrencyDropdown
               data={data}
               symbols={symbols}
@@ -105,7 +105,7 @@ export default function Home({ data, symbols }) {
           </button>
 
           <div className="flex flex-col w-full align-center">
-            <h1>To</h1>
+            <h1 className="text-white">To</h1>
             <CurrencyDropdown
               data={data}
               symbols={symbols}
@@ -117,9 +117,9 @@ export default function Home({ data, symbols }) {
         </div>
 
         <div className="p-2 gap-2 flex justify-center items-center">
-          <h1 className="font-semibold text-2xl text-slate-700">Amount</h1>
+          <h1 className="font-semibold text-2xl text-slate-700 dark:text-slate-500 ">Amount</h1>
           <input
-            className="border-[1.5px] shadow-lg border-gray-300 rounded-lg w-2/4 p-2"
+            className="border-[1.5px] shadow-lg focus:outline-none border-gray-300 rounded-lg w-2/4 p-2 dark:bg-[#3d3d3d] dark:text-white"
             type="number"
             value={amount}
             onInput={(e) => handleChange(e.target.value)}
@@ -127,16 +127,16 @@ export default function Home({ data, symbols }) {
         </div>
 
         <div className="flex justify-center items-center mt-5 gap-5">
-          <h1 className="font-medium text-2xl items-center">Exchange Rate</h1>
+          <h1 className="font-medium text-2xl items-center dark:text-indigo-500">Exchange Rate</h1>
         </div>
         <div className="flex justify-center">
           <div className="border-2 border-indigo-500 w-[20%] p-3 justify-center flex rounded-lg">
-            <h1 className=" font-medium text-xl w-full text-center break-words">
+            <h1 className=" font-medium text-xl w-full text-center break-words dark:text-white">
               {convertedAmt}
             </h1>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
